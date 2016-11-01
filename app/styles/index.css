@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Helvetica' sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #BFB59E;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav {
+  background-color: #754F5B;
+}
+
+header {
+  background: url('http://canontweets.com/wp-content/uploads/2013/07/canon-eos-70D-Sample-Image.jpg');
+  background-size: cover;
+  flex-direction:column;
+  min-height: 110vh;
+  justify-content: center;
+}
+
+.card .card-image .card-title {
+  color: #BFB59E;
+}
+
+#title {
+  font-family: 'Yellowtail', cursive;
+}
+
+#footer {
+  background-color: #754F5B;
+  margin-top: auto;
+}
+
+#checkoutButton {
+  background-color: #754F5B;
+}
+
+#cart {
+  border: 1vh solid #754F5B;
+  border-radius: 10px;
+  background-color: #E6DBD0
+}
+
+#loginBox {
+  font-family: 'Yellowtail', cursive;
+  margin-top: 25%;
+  min-height: 2vh;
+  border: 4px solid #754F5B;
+  border-radius: 5px;
+  background-color: #E6DBD0;
+  padding: 0%;
+}
+
+#modal2 {
+  font-family: 'Yellowtail', cursive;
+  margin-top: 10%;
+  min-height: 2vh;
+  border: 4px solid #754F5B;
+  border-radius: 5px;
+  background-color: #E6DBD0;
+  padding: 0%;
+}
+
+#loginBoxHead {
+  background-color: #754F5B;
+  min-height: 7vh;
+  width: 100%;
+}
+
+#loginLabel {
+  margin-top: 0%;
+}
+
+#loginButton {
+  background-color: #754F5B;
+}
+
+#needAccButton {
+  background-color: #754F5B;
+}
+
+#signupButton {
+  background-color: #754F5B;
+}
