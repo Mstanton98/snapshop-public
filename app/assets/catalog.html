@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
 </head>
-<body ng-controller="CatalogCtrl as catalogCtrl">
+<body>
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="orders.html">Your Orders</a></li>
     <li class="divider"></li>
@@ -26,9 +26,9 @@
       </ul>
     </div>
   </nav>
-  <div class="container">
+  <div class="container" ng-controller="CatalogCtrl as catalogCtrl">
     <div class="row">
-      <div class="col l4 m4 s12">
+      <div class="col l4 m12 s12">
         <div input-field id="search">
           <input type="text" ng-model="catalogCtrl.searchText" id="searchBox">
           <label><i class="material-icons">search</i>Search Cameras</label>
@@ -36,7 +36,7 @@
             <option ng-repeat="option in catalogCtrl.selectOrder" value="{{ option.value }}">{{option.label}}</option>
           </select>
         </div>
-        <div  id="cart">
+        <div ng-controller="CartCtrl as cartCtrl" id="cart">
           <h6>Your cart</h6>
           <table>
             <thead>
@@ -47,27 +47,35 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="item in catalogCtrl.cart">
+              <tr ng-repeat="cam in cartCtrl.cart() track by $index">
                 <td>{{ cam.id }}</td>
                 <td>{{ cam.name }}</td>
                 <td>{{ cam.price | currency }}</td>
               </tr>
             </tbody>
           </table>
+          <ul id="orderDetails">
+            <li id="subtotal" ng-hide="cartCtrl.getSubtotal() === 0">Subtotal: {{ cartCtrl.getSubtotal() | currency }}</li>
+            <li id="tax" ng-hide="cartCtrl.getSubtotal() === 0">Tax: {{ cartCtrl.getSubtotal() * 0.095 | currency }}</li>
+            <li id="total" ng-hide="cartCtrl.getSubtotal() === 0">Total: {{ cartCtrl.getSubtotal() + cartCtrl.getSubtotal() * 0.095 | currency }}</li>
+          </ul>
+          <p ng-hide="cartCtrl.getSubtotal() === 0">Note: most orders ship within 7-10 business days.</p>
           <a class="waves-effect waves-light btn" id="checkoutButton" href="checkout.html"><i class="material-icons right">shopping_cart</i>Checkout</a>
         </div>
       </div>
-      <div ng-repeat="cam in catalogCtrl.cameras | filter: catalogCtrl.searchText | orderBy: catalogCtrl.sortBy " class="card col l4 m4 s12">
-        <div class="card-image">
-          <img ng-src="{{ cam.image }}"/>
-          <h6 class="card-title" ng-show="cam.onSale">ON SALE!</h6>
-        </div>
-        <div class="card-content">
-          <h5>{{ cam.name }}</h5>
-          <p>{{ cam.price | currency }} || Rating: {{ cam.rating }}</p>
-        </div>
-        <div class="card-action">
-          <a ng-href="#" class="addToCart">Add to Cart</a>
+      <div>
+        <div ng-repeat="cam in catalogCtrl.cameras | filter: catalogCtrl.searchText | orderBy: catalogCtrl.sortBy " class="card col l4 m12 s12">
+          <div class="card-image">
+            <img ng-src="{{ cam.image }}"/>
+            <h6 class="card-title" ng-show="cam.onSale">ON SALE!</h6>
+          </div>
+          <div class="card-content">
+            <h5>{{ cam.id }}. {{ cam.name }}</h5>
+            <p>{{ cam.price | currency }} || Rating: {{ cam.rating }}</p>
+          </div>
+          <div class="card-action">
+            <a ng-click="catalogCtrl.addToCart(cam)" href="" class="addToCart">Add to Cart</a>
+          </div>
         </div>
       </div>
     </div>
