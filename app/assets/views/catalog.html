@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" ng-controller="CatalogCtrl as catalogCtrl">
+    <div class="col l4 m12 s12">
+      <div input-field id="search">
+        <input type="text" ng-model="catalogCtrl.searchText" id="searchBox">
+        <label><i class="material-icons">search</i>Search Cameras</label>
+        <select material-select ng-model="catalogCtrl.sortBy">
+          <option ng-repeat="option in catalogCtrl.selectOrder" value="{{ option.value }}">{{option.label}}</option>
+        </select>
+      </div>
+      <div ng-include="'templates/cart.html'">
+      </div>
+      <a class="waves-effect waves-light btn" id="checkoutButton" ui-sref="checkout"><i class="material-icons right">shopping_cart</i>Checkout</a>
+    </div>
+    <div>
+      <div ng-repeat="cam in catalogCtrl.getCameras() | filter: catalogCtrl.searchText | orderBy: catalogCtrl.sortBy " class="card col l4 m12 s12">
+        <div class="card-image">
+          <img ng-src="{{ cam.image }}"/>
+          <h6 class="card-title" ng-show="cam.onSale">ON SALE!</h6>
+        </div>
+        <div class="card-content">
+          <h5>{{ cam.id }}. {{ cam.name }}</h5>
+          <p>{{ cam.price | currency }} || Rating: {{ cam.rating }}</p>
+        </div>
+        <div class="card-action">
+          <a ng-click="catalogCtrl.addToCart(cam)" href="" class="addToCart">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

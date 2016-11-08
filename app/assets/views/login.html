@@ -1,0 +1,51 @@
+<header id="loginHeader">
+  <div class="container">
+    <div class="row">
+      <div id="loginBox" class="col l6 m6 s12 offset-l3 offset-m3">
+        <div id="loginBoxHead">
+          <h3 class="center-align" id="loginLabel">Login</h3>
+        </div>
+        <div class="row">
+          <form class="col s12">
+            <div class="input-field col s12 m12 l12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="usernameLogin" type="text" class="validate">
+              <label for="usernameLogin">Username</label>
+            </div>
+            <div class="input-field col s12 m12 l12">
+              <i class="material-icons prefix">lock</i>
+              <input id="passwordLogin" type="password" class="validate">
+              <label for="passwordLogin">Password</label>
+            </div>
+            <a class="waves-effect waves-light btn col l5 m5 s5" id="loginButton"><i class="material-icons right">lock_open</i>Log in</a>
+            <a modal class="waves-effect waves-light btn modal-trigger col l5 m5 s5 offset-l2 offset-m2 offset-s2" data-target="modal2" id="needAccButton">Need an account?</a>
+
+          </form>
+          <div id="modal2" class="modal">
+            <div class="modal-content" id="signupBox">
+              <h4 class="center-align">Create An Account</h4>
+              <form>
+                <div class="input-field col s12 m12 l12">
+                  <i class="material-icons prefix">email</i>
+                  <input id="emailSignup" type="email" class="validate">
+                  <label for="emailSignup">Email Address</label>
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="usernameSignup" type="text" class="validate">
+                  <label for="usernameSignup">Username</label>
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <i class="material-icons prefix">lock</i>
+                  <input id="passwordSignup" type="password" class="validate">
+                  <label for="passwordSignup">Password</label>
+                </div>
+                <a class="waves-effect waves-light btn col l6 m6 s12 offset-l3 offset-m3" id="signupButton"><i class="material-icons right">lock_open</i>Sign Up</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

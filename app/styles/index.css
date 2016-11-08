@@ -18,7 +18,7 @@ nav {
   background-color: #754F5B;
 }
 
-header {
+#loginHeader {
   background: url('http://canontweets.com/wp-content/uploads/2013/07/canon-eos-70D-Sample-Image.jpg');
   background-size: cover;
   flex-direction:column;
@@ -77,6 +77,10 @@ header {
   background-color: #E6DBD0;
   max-height: 30vh;
   overflow-y: scroll;
+}
+
+#cartTable {
+  border-bottom: 1px solid #754F5B;
 }
 
 #orderDetails {

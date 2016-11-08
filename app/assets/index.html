@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="my-app">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,99 +9,15 @@
   <link rel="stylesheet" href="/app.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="orders.html">Your Orders</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Sign Out</a></li>
-  </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="catalog.html" class="center-align brand-logo" id="title">SnapShop</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="checkout.html">Checkout</a></li>
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-    </div>
-  </nav>
-  <header>
-    <div class="container">
-      <div class="row">
-        <div id="loginBox" class="col l6 m6 s12 offset-l3 offset-m3">
-          <div id="loginBoxHead">
-            <h3 class="center-align" id="loginLabel">Login</h3>
-          </div>
-          <div class="row">
-            <form class="col s12">
-              <div class="input-field col s12 m12 l12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="usernameLogin" type="text" class="validate">
-                <label for="usernameLogin">Username</label>
-              </div>
-              <div class="input-field col s12 m12 l12">
-                <i class="material-icons prefix">lock</i>
-                <input id="passwordLogin" type="password" class="validate">
-                <label for="passwordLogin">Password</label>
-              </div>
-              <a class="waves-effect waves-light btn col l5 m5 s5" id="loginButton"><i class="material-icons right">lock_open</i>Log in</a>
-              <a class="waves-effect waves-light btn modal-trigger col l5 m5 s5 offset-l2 offset-m2 offset-s2" data-target="modal2" id="needAccButton">Need an account?</a>
+  <nav ng-include="'templates/nav.html'"></nav>
+  <ul ng-include="'templates/navdropdown.html'"></ul>
 
-            </form>
-            <div id="modal2" class="modal">
-              <div class="modal-content" id="signupBox">
-                <h4 class="center-align">Create An Account</h4>
-                <form>
-                  <div class="input-field col s12 m12 l12">
-                    <i class="material-icons prefix">email</i>
-                    <input id="emailSignup" type="email" class="validate">
-                    <label for="emailSignup">Email Address</label>
-                  </div>
-                  <div class="input-field col s12 m12 l12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="usernameSignup" type="text" class="validate">
-                    <label for="usernameSignup">Username</label>
-                  </div>
-                  <div class="input-field col s12 m12 l12">
-                    <i class="material-icons prefix">lock</i>
-                    <input id="passwordSignup" type="password" class="validate">
-                    <label for="passwordSignup">Password</label>
-                  </div>
-                  <a class="waves-effect waves-light btn col l6 m6 s12 offset-l3 offset-m3" id="signupButton"><i class="material-icons right">lock_open</i>Sign Up</a>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <footer class="page-footer" id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">SnapShop</h5>
-          <p class="grey-text text-lighten-4">Your go-to for shopping Merv's cameras</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Menu</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="checkout.html">Checkout</a></li>
-            <li><a class="grey-text text-lighten-3" href="orders.html">Your Orders</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2016 Copyright Merv Adello
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
-    </div>
-  </footer>
+  <div ui-view></div>
+
+  <footer ng-include="'templates/footer.html'"></footer>
+
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script src="/vendor.js"></script>
