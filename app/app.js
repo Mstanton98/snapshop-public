@@ -8,15 +8,20 @@ import CatalogService from './catalog/catalog.service';
 import CartCtrl from './cart/cart.controller';
 import CartService from './cart/cart.service';
 
+import LoginCtrl from './login/login.controller';
+import LoginService from './login/login.service';
+
 angular.module('my-app', [angularMaterialize, uiRouter])
+  .service('loginService', LoginService)
   .service('catalogService', CatalogService)
   .service('cartService', CartService)
+  .controller('LoginCtrl', LoginCtrl)
   .controller('CatalogCtrl', CatalogCtrl)
   .controller('CartCtrl', CartCtrl)
   .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('index', {
-        url: '',
+        url: '/',
         templateUrl: 'views/catalog.html'
       })
       .state('checkout', {

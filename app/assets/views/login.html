@@ -5,19 +5,19 @@
         <div id="loginBoxHead">
           <h3 class="center-align" id="loginLabel">Login</h3>
         </div>
-        <div class="row">
+        <div class="row" ng-controller="LoginCtrl as loginCtrl">
           <form class="col s12">
             <div class="input-field col s12 m12 l12">
               <i class="material-icons prefix">account_circle</i>
-              <input id="usernameLogin" type="text" class="validate">
-              <label for="usernameLogin">Username</label>
+              <input id="usernameLogin" type="email" ng-model="loginCtrl.email">
+              <label for="usernameLogin">Email</label>
             </div>
             <div class="input-field col s12 m12 l12">
               <i class="material-icons prefix">lock</i>
-              <input id="passwordLogin" type="password" class="validate">
+              <input id="passwordLogin" type="password" ng-model="loginCtrl.password">
               <label for="passwordLogin">Password</label>
             </div>
-            <a class="waves-effect waves-light btn col l5 m5 s5" id="loginButton"><i class="material-icons right">lock_open</i>Log in</a>
+            <a class="waves-effect waves-light btn col l5 m5 s5" ng-click="loginCtrl.userLogin()" id="loginButton"><i class="material-icons right">lock_open</i>Log in</a>
             <a modal class="waves-effect waves-light btn modal-trigger col l5 m5 s5 offset-l2 offset-m2 offset-s2" data-target="modal2" id="needAccButton">Need an account?</a>
 
           </form>

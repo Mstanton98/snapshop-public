@@ -18,14 +18,6 @@ nav {
   background-color: #754F5B;
 }
 
-#loginHeader {
-  background: url('http://canontweets.com/wp-content/uploads/2013/07/canon-eos-70D-Sample-Image.jpg');
-  background-size: cover;
-  flex-direction:column;
-  min-height: 110vh;
-  justify-content: center;
-}
-
 .card {
   max-height: 5%;
   min-height: 4%;
@@ -56,6 +48,14 @@ nav {
 .card .card-image .card-title {
   color: #fff;
   margin-left: 32%;
+}
+
+#loginHeader {
+  background: url('http://canontweets.com/wp-content/uploads/2013/07/canon-eos-70D-Sample-Image.jpg');
+  background-size: cover;
+  flex-direction:column;
+  min-height: 120vh;
+  justify-content: center;
 }
 
 #title {
