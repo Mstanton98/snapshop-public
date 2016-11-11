@@ -11,17 +11,27 @@ import CartService from './cart/cart.service';
 import LoginCtrl from './login/login.controller';
 import LoginService from './login/login.service';
 
+import SignupCtrl from './signup/signup.controller';
+import SignupService from './signup/signup.service';
+
+import CheckoutCtrl from './checkout/checkout.controller';
+import CheckoutService from './checkout/checkout.service';
+
 angular.module('my-app', [angularMaterialize, uiRouter])
+  .service('checkoutService', CheckoutService)
   .service('loginService', LoginService)
+  .service('signupService', SignupService)
   .service('catalogService', CatalogService)
   .service('cartService', CartService)
+  .controller('CheckoutCtrl', CheckoutCtrl)
+  .controller('SignupCtrl', SignupCtrl)
   .controller('LoginCtrl', LoginCtrl)
   .controller('CatalogCtrl', CatalogCtrl)
   .controller('CartCtrl', CartCtrl)
   .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('index', {
-        url: '/',
+        url: '',
         templateUrl: 'views/catalog.html'
       })
       .state('checkout', {

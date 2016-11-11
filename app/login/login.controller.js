@@ -10,6 +10,14 @@ class LoginCtrl {
     this.loginSvc.user.password = this.password;
     this.loginSvc.login();
   }
+
+  logout() {
+    return this.loginSvc.logout();
+  }
+
+  isUserAuth() {
+    return this.loginSvc.signedIn;
+  }
 }
 
 LoginCtrl.$inject = ['loginService'];

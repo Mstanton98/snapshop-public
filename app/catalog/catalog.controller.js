@@ -3,6 +3,7 @@ class CatalogCtrl {
     this.cartSvc = cartSvc;
     this.catalogSvc = catalogSvc;
     this.searchText = '';
+    this.cameras;
     this.sortBy = '';
     this.selectOrder = [
       {
@@ -19,15 +20,20 @@ class CatalogCtrl {
         value: 'rating'
       }
     ];
+
+
+    this.catalogSvc.getCameraArr()
+      .then((cameras) => {
+        this.cameras = cameras;
+      })
+      .catch((err) => console.log(err));
   }
 
-  getCameras() {
-    return this.catalogSvc.cameras;
-  }
+
 
   addToCart(camera) {
     this.cartSvc.addToCart(camera);
-    Materialize.toast('Item added to cart', 3000);
+    Materialize.toast('Item added to cart', 4000);
   }
 }
 

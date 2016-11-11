@@ -22,25 +22,30 @@
 
           </form>
           <div id="modal2" class="modal">
-            <div class="modal-content" id="signupBox">
+            <div class="modal-content" id="signupBox" ng-controller="SignupCtrl as signupCtrl">
               <h4 class="center-align">Create An Account</h4>
               <form>
                 <div class="input-field col s12 m12 l12">
-                  <i class="material-icons prefix">email</i>
-                  <input id="emailSignup" type="email" class="validate">
-                  <label for="emailSignup">Email Address</label>
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="firstNameSignup" type="text" ng-model="signupCtrl.firstName">
+                  <label for="firstNameSignup">First Name</label>
                 </div>
                 <div class="input-field col s12 m12 l12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="usernameSignup" type="text" class="validate">
-                  <label for="usernameSignup">Username</label>
+                  <input id="lastNameSignup" type="text" ng-model="signupCtrl.lastName">
+                  <label for="lastNameSignup">Last Name</label>
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <i class="material-icons prefix">email</i>
+                  <input id="emailSignup" type="email" ng-model="signupCtrl.email">
+                  <label for="emailSignup">Email Address</label>
                 </div>
                 <div class="input-field col s12 m12 l12">
                   <i class="material-icons prefix">lock</i>
-                  <input id="passwordSignup" type="password" class="validate">
+                  <input id="passwordSignup" type="password" ng-model="signupCtrl.password">
                   <label for="passwordSignup">Password</label>
                 </div>
-                <a class="waves-effect waves-light btn col l6 m6 s12 offset-l3 offset-m3" id="signupButton"><i class="material-icons right">lock_open</i>Sign Up</a>
+                <a ng-click="signupCtrl.userSignup()" class="waves-effect waves-light btn col l6 m6 s12 offset-l3 offset-m3" id="signupButton"><i class="material-icons right">lock_open</i>Sign Up</a>
               </form>
             </div>
           </div>

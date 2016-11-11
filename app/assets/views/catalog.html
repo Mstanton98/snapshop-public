@@ -13,7 +13,7 @@
       <a class="waves-effect waves-light btn" id="checkoutButton" ui-sref="checkout"><i class="material-icons right">shopping_cart</i>Checkout</a>
     </div>
     <div>
-      <div ng-repeat="cam in catalogCtrl.getCameras() | filter: catalogCtrl.searchText | orderBy: catalogCtrl.sortBy " class="card col l4 m12 s12">
+      <div ng-repeat="cam in catalogCtrl.cameras | filter: catalogCtrl.searchText | orderBy: catalogCtrl.sortBy " class="card col l4 m12 s12">
         <div class="card-image">
           <img ng-src="{{ cam.image }}"/>
           <h6 class="card-title" ng-show="cam.onSale">ON SALE!</h6>

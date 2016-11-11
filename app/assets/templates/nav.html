@@ -1,10 +1,10 @@
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper" ng-controller="LoginCtrl as loginCtrl">
     <a ui-sref="index" class="brand-logo" id="title">SnapShop</a>
     <ul class="right hide-on-med-and-down">
-      <li><a ui-sref="login">Sign In</a></li>
+      <li><a ui-sref="login" ng-hide="loginCtrl.isUserAuth()">Sign In</a></li>
       <li><a ui-sref="index">Catalog</a></li>
-      <li><a ui-sref="orders">Your Orders</a></li>
+      <li><a ui-sref="orders" ng-show="loginCtrl.isUserAuth()">Your Orders</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="#!" dropdown data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
