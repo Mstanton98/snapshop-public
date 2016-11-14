@@ -1,16 +1,16 @@
-<div class="container">
-  <div class="row">
+<div class="container" ng-controller="OrderCtrl as orderCtrl">
+  <div class="row" ng-repeat="order in orderCtrl.orders">
     <div class="col s12 m4 l4">
       <div class="card medium">
-        <div class="card-image">
-          <img src="http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg">
-          <span class="card-title">Nikon D3100 DSLR</span>
-        </div>
         <div class="card-content">
-          <p>$369.99</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Cancel Order</a>
+        <h1>Order: {{ order.id }}</h1>
+          <h5>{{ order.address }}</h5>
+          <h5>{{ order.city }}</h5>
+          <h5>{{ order.orderedAt }}</h5>
+
+
+
+
         </div>
       </div>
     </div>

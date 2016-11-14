@@ -29,11 +29,9 @@ class CatalogCtrl {
       .catch((err) => console.log(err));
   }
 
-
-
   addToCart(camera) {
-    this.cartSvc.addToCart(camera);
     Materialize.toast('Item added to cart', 4000);
+    this.cartSvc.addToCart(camera);
   }
 }
 

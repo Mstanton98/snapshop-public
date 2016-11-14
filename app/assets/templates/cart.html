@@ -3,14 +3,14 @@
   <table id="cartTable">
     <thead>
       <tr>
-        <th data-field="id">Item Id</th>
+        <th data-field="id">Quantity</th>
         <th data-field="name">Item Name</th>
         <th data-field="price">Item Price</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="cam in cartCtrl.cart() track by $index">
-        <td>{{ cam.id }}</td>
+        <td>{{ cam.quantity }}</td>
         <td>{{ cam.name }}</td>
         <td>{{ cam.price | currency }}</td>
       </tr>
@@ -21,5 +21,5 @@
     <li id="tax" ng-hide="cartCtrl.getSubtotal() === 0">Tax: {{ cartCtrl.getSubtotal() * 0.095 | currency }}</li>
     <li id="total" ng-hide="cartCtrl.getSubtotal() === 0">Total: {{ cartCtrl.getSubtotal() + cartCtrl.getSubtotal() * 0.095 | currency }}</li>
   </ul>
-  <p ng-hide="cartCtrl.getSubtotal() === 0">Note: most orders ship within 7-10 business days.</p>
+  <p ng-hide="cartCtrl.getSubtotal() === 0">Note: most orders ready for pickup within 7-10 business days.</p>
 </div>

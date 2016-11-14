@@ -17,12 +17,17 @@ import SignupService from './signup/signup.service';
 import CheckoutCtrl from './checkout/checkout.controller';
 import CheckoutService from './checkout/checkout.service';
 
+import OrderCtrl from './orders/orders.controller';
+import OrderService from './orders/orders.service';
+
 angular.module('my-app', [angularMaterialize, uiRouter])
   .service('checkoutService', CheckoutService)
   .service('loginService', LoginService)
   .service('signupService', SignupService)
   .service('catalogService', CatalogService)
   .service('cartService', CartService)
+  .service('orderService', OrderService)
+  .controller('OrderCtrl', OrderCtrl)
   .controller('CheckoutCtrl', CheckoutCtrl)
   .controller('SignupCtrl', SignupCtrl)
   .controller('LoginCtrl', LoginCtrl)

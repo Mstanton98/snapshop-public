@@ -1,33 +1,33 @@
-<div class="container">
+<div class="container" ng-controller="CheckoutCtrl as checkoutCtrl">
   <div class="row">
     <form class="col s12">
-      <div class="row">
         <div class="input-field col s12 m12 l12">
-          <input id="address1" type="text" class="validate">
+          <input id="address1" type="text" class="validate" ng-model="checkoutCtrl.address1">
           <label for="address1">Address 1</label>
         </div>
         <div class="input-field col s12 m12 l12">
-          <input id="address2" type="text" class="validate">
+          <input id="address2" type="text" class="validate" ng-model="checkoutCtrl.address2">
           <label for="address2">Address 2</label>
         </div>
-      </div>
       <div class="row">
         <div class="input-field col s6 m6 l6">
-          <input id="city" type="text" class="validate">
+          <input id="city" type="text" class="validate" ng-model="checkoutCtrl.city">
           <label for="city">City</label>
         </div>
         <div class="input-field col s3 m3 l3">
-          <input id="state" type="text" class="validate">
+          <input id="state" type="text" class="validate" ng-model="checkoutCtrl.state">
           <label for="state">State</label>
         </div>
         <div class="input-field col s3 m3 l3">
-          <input id="zipcode" type="text" class="validate">
+          <input id="zipcode" type="text" class="validate" ng-model="checkoutCtrl.zipcode">
           <label for="zipcode">Zip</label>
         </div>
       </div>
     </form>
+    <div ng-include="'templates/cart.html'" class="s12 m12 l8 offset-l4">
+    </div>
+    <div>
+    <a class="btn modal-trigger l4 m4 s4 offset-l4 offset-m4 offset-s4" id="checkoutButton" ng-click="checkoutCtrl.submitOrder()"><i class="material-icons right">shopping_cart</i>Confirm Information</a>
   </div>
-  <div ng-include="'templates/cart.html'">
   </div>
-  <a class="center-align btn modal-trigger" id="checkoutButton" data-target="modal1"><i class="material-icons right">shopping_cart</i>Comfirm Information</a>
 </div>
