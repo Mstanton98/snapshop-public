@@ -1,10 +1,10 @@
 <div class="container" ng-controller="OrderCtrl as orderCtrl">
   <div class="row" ng-repeat="order in orderCtrl.orders">
     <div class="col s12 m4 l4">
-      <div class="card medium">
+      <div class="card medium ordercard">
         <div class="card-content">
-        <h1>Order: {{ order.id }}</h1>
-          <h5>{{ order.address }}</h5>
+          <h1>Order: {{ order.id }}</h1>
+          <h5>{{ order.address1 }}</h5>
           <h5>{{ order.city }}</h5>
           <h5>{{ order.orderedAt }}</h5>
 
@@ -12,7 +12,26 @@
 
 
         </div>
+        <a modal class="waves-effect waves-light btn modal-trigger col l8 m8 s8 offset-l2 offset-m2 offset-s2" data-target="orderModal" ng-click="orderCtrl.getUserItems(order.id)" id="orderInfo">View more details</a>
+        <div id="orderModal" class="modal">
+            <div class="col s12 m12 l12">
+              <h2 class="header">{{ item.name }}</h2>
+              <div class="card horizontal" ng-repeat="item in orderCtrl.items">
+                <div class="card-image">
+                  <img ng-src="{{ item.image }}">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Item id: {{ item.id }}</p>
+                    <p>Item rating: {{ item.rating }}</p>
+                    <p>Item price: {{ item.price | currency }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
+    <!-- Modal Structure -->
   </div>
 </div>

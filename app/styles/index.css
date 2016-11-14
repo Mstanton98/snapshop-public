@@ -50,6 +50,16 @@ nav {
   margin-left: 32%;
 }
 
+#orderInfo {
+  background-color: #754F5B;
+  position: relative;
+  margin-top: 2vh;
+}
+
+#orderModal {
+  background-color: #754F5B;
+}
+
 #loginHeader {
   background: url('http://canontweets.com/wp-content/uploads/2013/07/canon-eos-70D-Sample-Image.jpg');
   background-size: cover;

@@ -16,10 +16,10 @@
       </tr>
     </tbody>
   </table>
+  <p ng-hide="cartCtrl.getSubtotal() === 0">Note: most orders ready for pickup within 24 hours.</p>
   <ul id="orderDetails">
-    <li id="subtotal" ng-hide="cartCtrl.getSubtotal() === 0">Subtotal: {{ cartCtrl.getSubtotal() | currency }}</li>
-    <li id="tax" ng-hide="cartCtrl.getSubtotal() === 0">Tax: {{ cartCtrl.getSubtotal() * 0.095 | currency }}</li>
-    <li id="total" ng-hide="cartCtrl.getSubtotal() === 0">Total: {{ cartCtrl.getSubtotal() + cartCtrl.getSubtotal() * 0.095 | currency }}</li>
+    <li id="subtotal" ng-hide="cartCtrl.getSubtotal() < 1">Subtotal: {{ cartCtrl.getSubtotal() | currency }}</li>
+    <li id="tax" ng-hide="cartCtrl.getSubtotal() < 1">Tax: {{ cartCtrl.getSubtotal() * 0.095 | currency }}</li>
+    <li id="total" ng-hide="cartCtrl.getSubtotal() < 1">Total: {{ cartCtrl.getSubtotal() + cartCtrl.getSubtotal() * 0.095 | currency }}</li>
   </ul>
-  <p ng-hide="cartCtrl.getSubtotal() === 0">Note: most orders ready for pickup within 7-10 business days.</p>
 </div>
