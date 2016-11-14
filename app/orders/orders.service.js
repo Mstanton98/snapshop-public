@@ -17,7 +17,6 @@ class OrderService {
   getUserOrderItems(orderId) {
     return this.$http.get(`/api/orders/${orderId}`)
       .then((res) => {
-        console.log(res.data.items);
         return res.data.items;
       })
       .catch((err) => {

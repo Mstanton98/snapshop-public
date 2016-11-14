@@ -1,16 +1,12 @@
 <div class="container" ng-controller="OrderCtrl as orderCtrl">
-  <div class="row" ng-repeat="order in orderCtrl.orders">
-    <div class="col s12 m4 l4">
+  <div class="row">
+    <div class="col s12 m4 l4" ng-repeat="order in orderCtrl.orders">
       <div class="card medium ordercard">
         <div class="card-content">
           <h1>Order: {{ order.id }}</h1>
-          <h5>{{ order.address1 }}</h5>
-          <h5>{{ order.city }}</h5>
-          <h5>{{ order.orderedAt }}</h5>
-
-
-
-
+          <h6>{{ order.address1 }}</h6>
+          <h6>{{ order.city }}</h6>
+          <h6>{{ order.orderedAt }}</h6>
         </div>
         <a modal class="waves-effect waves-light btn modal-trigger col l8 m8 s8 offset-l2 offset-m2 offset-s2" data-target="orderModal" ng-click="orderCtrl.getUserItems(order.id)" id="orderInfo">View more details</a>
         <div id="orderModal" class="modal">

@@ -20,6 +20,6 @@
   <ul id="orderDetails">
     <li id="subtotal" ng-hide="cartCtrl.getSubtotal() < 1">Subtotal: {{ cartCtrl.getSubtotal() | currency }}</li>
     <li id="tax" ng-hide="cartCtrl.getSubtotal() < 1">Tax: {{ cartCtrl.getSubtotal() * 0.095 | currency }}</li>
-    <li id="total" ng-hide="cartCtrl.getSubtotal() < 1">Total: {{ cartCtrl.getSubtotal() + cartCtrl.getSubtotal() * 0.095 | currency }}</li>
+    <li id="total" ng-hide="cartCtrl.getSubtotal() < 1">Total: {{ cartCtrl.getSubtotal() * 1.095 | currency }}</li>
   </ul>
 </div>

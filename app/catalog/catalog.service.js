@@ -6,6 +6,9 @@ class CatalogService {
   getCameraArr() {
     return this.$http.get('/api/cameras')
       .then((res) => {
+        res.data.forEach((camera) => {
+          camera.price = parseFloat(camera.price);
+        })
         return res.data;
       })
       .catch((err) => {

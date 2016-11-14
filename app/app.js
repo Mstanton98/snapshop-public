@@ -39,6 +39,10 @@ angular.module('my-app', [angularMaterialize, uiRouter])
         url: '',
         templateUrl: 'views/catalog.html'
       })
+      .state('index1', {
+        url: '/',
+        templateUrl: 'views/catalog.html'
+      })
       .state('checkout', {
         url: '/checkout',
         templateUrl: 'views/checkout.html'

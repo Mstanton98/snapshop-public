@@ -5,8 +5,9 @@ class CartService {
   }
 
   addToCart(camera) {
-    this.subtotal += camera.price;
+    this.subtotal += parseFloat(camera.price);
     this.cart.push(camera);
+    console.log(this.subtotal);
   }
 }
 

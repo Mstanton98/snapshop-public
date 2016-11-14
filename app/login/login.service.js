@@ -1,6 +1,7 @@
 class LoginService {
-  constructor($http) {
+  constructor($http, $state) {
     this.$http = $http;
+    this.$state = $state;
     this.user = {};
     this.signedIn = false;
 
@@ -17,6 +18,7 @@ class LoginService {
     return this.$http.post('/api/token', this.user)
       .then(() => {
         this.signedIn = true;
+        this.$state.go('index');
         return Materialize.toast('Welcome!', 4000);
       })
       .catch(() => {
@@ -36,6 +38,6 @@ class LoginService {
   }
 }
 
-LoginService.$inject = ['$http'];
+LoginService.$inject = ['$http', '$state'];
 
 export default LoginService;
